@@ -1,10 +1,11 @@
-load('../ext/env.rhino.1.2.js');
+var baseDir = arguments[0];
+load(baseDir + '/lib/env.rhino.1.2.js');
 
 Envjs.scriptTypes['text/javascript'] = true;
 
 var specFile;
 
-for (i = 0; i < arguments.length; i++) {
+for (i = 1; i < arguments.length; i++) {
     specFile = arguments[i];
     
     console.log("Loading: " + specFile);
