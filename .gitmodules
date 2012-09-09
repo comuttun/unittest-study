@@ -4,3 +4,6 @@
 [submodule "jasmine"]
 	path = jasmine
 	url = git://github.com/pivotal/jasmine.git
+[submodule "env-js"]
+	path = env-js
+	url = git://github.com/thatcher/env-js
