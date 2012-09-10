@@ -112,8 +112,8 @@ var result = doHoge(function() {
 ```JavaScript
 function HogeClass() {}
 HogeClass.prototype.hello = function() {
-     return "hello"
-}
+     return "hello";
+}; // 最後のセミコロン大事
 ```
 
 のように行います。
