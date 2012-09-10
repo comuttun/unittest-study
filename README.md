@@ -18,7 +18,7 @@
     * JavaScript を使って、実際に単体テストをみんなで書いてみる
 * 自動テストを動かしてみる（not ハンズオン）
 
-*注意*
+**注意**
 
 JavaScript を使用しますが、言語のひとつとして使用するだけです。
 そのため、 JavaScript の単体テストの奥深くを紹介するわけではありません。
@@ -84,11 +84,11 @@ function HogeClass() {}
 var hoge = new HogeClass();
 ```
 
-以降、便宜上、 function HogeClass() {} のように定義した関数オブジェクトをクラスと表記します。
+以降、便宜上、  `function HogeClass() {}` のように定義した関数オブジェクトをクラスと表記します。
     
 ### その2
 
-JavaScript は匿名関数をすごく、すごく、多様します。
+JavaScript は匿名関数をすごく、すごく、多用します。
 （Jasmine のテストケースでも一杯使います）
 
 ```JavaScript
