@@ -73,11 +73,15 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
 
 JavaScript でのクラス（のようなもの）の定義は
 
-    function HogeClass() {}
+```JavaScript
+function HogeClass() {}
+```
     
 その実体化は
 
-    var hoge = new HogeClass();
+```JavaScript
+var hoge = new HogeClass();
+```
 
 以降、便宜上、 function HogeClass() {} のように定義した関数オブジェクトをクラスと表記します。
     
@@ -86,13 +90,15 @@ JavaScript でのクラス（のようなもの）の定義は
 JavaScript は匿名関数をすごく、すごく、多様します。
 （Jasmine のテストケースでも一杯使います）
 
-    function doHoge(func) {
-        return func();
-    }
+```JavaScript
+function doHoge(func) {
+    return func();
+}
 
-    var result = doHoge(function() {
-        return "hogehoge";
-    });
+var result = doHoge(function() {
+    return "hogehoge";
+});
+```
 
 上記のようなコードがあった場合、 result は "hogehoge" になります。
 匿名関数がよくわからない方は、詳しく理解しなくても今回の勉強会では大丈夫です。
@@ -102,16 +108,20 @@ JavaScript は匿名関数をすごく、すごく、多様します。
 
 クラスへのメソッド追加は
 
-    function HogeClass() {}
-    HogeClass.prototype.hello = function() {
-         return "hello"
-    }
+```JavaScript
+function HogeClass() {}
+HogeClass.prototype.hello = function() {
+     return "hello"
+}
+```
 
 のように行います。
 上記のように定義した場合、
 
-    var hoge = new HogeClass();
-    alert(hoge.hello());
+```JavaScript
+var hoge = new HogeClass();
+alert(hoge.hello());
+```
 
 は "hello" がダイアログに表示されます。
 
