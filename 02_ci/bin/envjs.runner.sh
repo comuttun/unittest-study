@@ -40,7 +40,8 @@ if [ ${CYGWIN} -eq 1 ]; then
     CLASSPATH=$(cygpath -w "${EXTLIB_DIR}/js.jar")
     ROOTDIR_FULLPATH_WIN=$(cygpath -w "${ROOTDIR_FULLPATH}")
     JAVA=$(cygpath "${JAVA_HOME}\\bin\\java")
-    "${JAVA}" -cp "${CLASSPATH}" ${MAIN_CLASS} -opt -1 "${LIB_DIR}/envjs.bootstrap.js" "${ROOTDIR_FULLPATH_WIN}" "$@"
+    BOOTSTRAP_JS=$(cygpath -w "${LIB_DIR}/envjs.bootstrap.js")
+    "${JAVA}" -cp "${CLASSPATH}" ${MAIN_CLASS} -opt -1 "${BOOTSTRAP_JS}" "${ROOTDIR_FULLPATH_WIN}" "$@"
 else
     CLASSPATH=${EXTLIB_DIR}/js.jar
     TARGET=$1
