@@ -60,6 +60,7 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
 1. 展開
 1. jasmine-1.2.0/lib/SpecRunner.html をブラウザで開きます。
 1. 以下のように、テストが正常に実行されればOKです。
+
    ![Jasmineのテスト結果](https://raw.github.com/comutt/unittest-study/master/images/jasmine-result.png)
 
 参加するための準備2
