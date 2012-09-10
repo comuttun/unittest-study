@@ -54,11 +54,10 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
 
 なので、各自のブラウザで Jasmine のサンプルテスト (SpecRunner.html) が正常に動くことを確認してください。
 
-手順
-^^^^^^
+### 手順
 
-# このリポジトリの [zip 版](https://github.com/comutt/unittest-study/zipball/v0.0.1) をダウンロード 
-# 展開
-# jasmine-1.2.0/lib/SpecRunner.html をブラウザで開きます。
-# 以下のように、テストが正常に実行されればOKです。
-  ![Jasmineのテスト結果](https://raw.github.com/comutt/unittest-study/master/images/jasmine-result.png)
+1. このリポジトリの [zip 版](https://github.com/comutt/unittest-study/zipball/v0.0.1) をダウンロード 
+1. 展開
+1. jasmine-1.2.0/lib/SpecRunner.html をブラウザで開きます。
+1. 以下のように、テストが正常に実行されればOKです。
+   ![Jasmineのテスト結果](https://raw.github.com/comutt/unittest-study/master/images/jasmine-result.png)
