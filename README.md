@@ -61,3 +61,61 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
 1. jasmine-1.2.0/lib/SpecRunner.html をブラウザで開きます。
 1. 以下のように、テストが正常に実行されればOKです。
    ![Jasmineのテスト結果](https://raw.github.com/comutt/unittest-study/master/images/jasmine-result.png)
+
+参加するための準備2
+---------------------
+
+趣旨に基づき、無難しいことはしませんが、
+最低限の JavaScript の知識は事前に勉強しておいていただけると幸いです。
+（一般的なオブジェクト志向言語と比較すると、少し変態的です）
+
+### その1
+
+JavaScript でのクラス（のようなもの）の定義は
+
+    function HogeClass() {}
+    
+その実体化は
+
+    var hoge = new HogeClass();
+
+以降、便宜上、 function HogeClass() {} のように定義した関数オブジェクトをクラスと表記します。
+    
+### その2
+
+JavaScript は匿名関数をすごく、すごく、多様します。
+（Jasmine のテストケースでも一杯使います）
+
+    function doHoge(func) {
+        return func();
+    }
+
+    var result = doHoge(function() {
+        return "hogehoge";
+    });
+
+上記のようなコードがあった場合、 result は "hogehoge" になります。
+匿名関数がよくわからない方は、詳しく理解しなくても今回の勉強会では大丈夫です。
+面食らわないようにだけしてください。（本当によく使うので）
+    
+### その3
+
+クラスへのメソッド追加は
+
+    function HogeClass() {}
+    HogeClass.prototype.hello = function() {
+         return "hello"
+    }
+
+のように行います。
+上記のように定義した場合、
+
+    var hoge = new HogeClass();
+    alert(hoge.hello());
+
+は "hello" がダイアログに表示されます。
+
+.prototype というのを使うのが、 JavaScript が変態たる所以です。
+今回の勉強会では、そういうもんだと思っていただければ大丈夫です。
+これも使うので、面食らわないようにだけしてください。
+    
