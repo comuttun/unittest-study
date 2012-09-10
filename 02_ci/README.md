@@ -24,7 +24,7 @@ Add build step
 Windows の場合は、 Cygwin を入れた上で、
 以下の内容で "Execute windows batch command" を登録する。
 
-`bash -c "02_ci/bin/envjs.runner.sh unittest-study/02_ci/junit_xml_reporter.html"`
+`bash -c "02_ci/bin/envjs.runner.sh 02_ci/junit_xml_reporter.html"`
 
 
 Add post-build action
