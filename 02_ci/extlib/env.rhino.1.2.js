@@ -1118,7 +1118,12 @@ Envjs.uri = function(path, base) {
     // if base is still empty, then we are in QA mode loading local
     // files.  Get current working directory
     if (!base) {
-        base = 'file://' +  Envjs.getcwd() + '/';
+        var prefix = 'file://';
+        var cwd = Envjs.getcwd();
+        if (cwd.match('^[a-zA-Z]:\\\\')) {
+            prefix = prefix + '/'
+        }
+        base = prefix + cwd + '/';
     }
     // handles all cases if path is abosulte or relative to base
     // 3rd arg is "false" --> remove fragments
