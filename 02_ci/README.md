@@ -19,7 +19,7 @@ Add build step
 
 以下の内容で、 "Execute shell" ステップを登録する
 
-`02_ci/bin/envjs.runner.sh unittest-study/02_ci/junit_xml_reporter.html`
+`02_ci/bin/envjs.runner.sh 02_ci/junit_xml_reporter.html`
 
 Windows の場合は、 Cygwin を入れた上で、
 以下の内容で "Execute windows batch command" を登録する。
