@@ -22,4 +22,4 @@ else
     TARGET=$1
 fi
 
-java -cp "${CLASSPATH}" org.mozilla.javascript.tools.shell.Main -opt -1 ${LIB_DIR}/envjs.bootstrap.js ${ROOTDIR_FILEURL} "${TARGET}"
+java -cp "${CLASSPATH}" org.mozilla.javascript.tools.shell.Main -opt -1 "${LIB_DIR}/envjs.bootstrap.js" ${ROOTDIR_FILEURL} "${TARGET}"
