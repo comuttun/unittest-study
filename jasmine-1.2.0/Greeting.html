@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- vim: ts=2 sts=2 sw=2 et ai si :
+  -->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>あいさつ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="src/Greeting.js"></script>
+  </head>
+
+  <body>
+
+      <h1>あいさつ</h1>
+
+      <form action="javascript:greeter.showGreeting();">
+        <label>
+          名前
+          <input type="text" name="personName" id="personName"/>
+        </label>
+        <label>
+          <input type="radio" name="greetingTime" id="morning" value="morning" checked/>
+          午前
+        </label>
+        <label>
+          <input type="radio" name="greetingTime" id="afternoon" value="afternoon"/>
+          午後
+        </label>
+        <label>
+          <input type="radio" name="greetingTime" id="evening" value="evening"/>
+          夕方
+        </label>
+          <button type="submit" class="btn">あいさつ</button>
+        </div>
+      </form>
+
+  </body>
+</html>
