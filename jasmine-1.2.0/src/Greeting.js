@@ -8,15 +8,20 @@ Greeter.prototype.getGreeting = function(greetingTime, name) {
 
     var greeting = "";
 
+
     // TODO: 下記を適切に実装する
     if (greetingTime == 'morning') {
-        greeting = undefined;
+        greeting = "おはよう";
     } else if (greetingTime == 'afternoon') {
-        greeting = undefined;
+        greeting = "こんにちは";
     } else if (greetingTime == 'evening') {
-        greeting = undefined;
+        greeting = "こんばんは";
     } else {
-        greeting = undefined;
+        return undefined;
+    }
+
+    if (name) {
+        greeting = name + "さん、" + greeting;
     }
 
     return greeting;
@@ -27,7 +32,12 @@ Greeter.prototype.showGreeting = function() {
     var greetingTime = $('input[name=greetingTime]:checked').val();
     var name = $('#personName').val();
 
-    alert(this.getGreeting(greetingTime, name));
+    var greeting = this.getGreeting(greetingTime, name);
+    if (greeting) {
+        alert(greeting);
+    } else {
+        alert('エラー');
+    }
 };
 
 // Greeter のインスタンス化
