@@ -13,7 +13,7 @@ REM set JAVA_HOME=
 
 REM Change the following to match your environment
 if "%JAVA_HOME%" == "" (
-    set JAVA_HOME=C:\Program Files (x86)\Java\jdk1.6.0_35
+    set JAVA_HOME="C:\Program Files (x86)\Java\jdk1.6.0_35"
 )
 
 del /q TEST-*.xml
