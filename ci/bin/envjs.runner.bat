@@ -21,5 +21,5 @@ del /q TEST-*.xml
 set CLASSPATH="%EXTLIB_DIR%\js.jar"
 set JAVA=%JAVA_HOME%\bin\java
 set BOOTSTRAP_JS=%LIB_DIR%\envjs.bootstrap.js
-echo %JAVA% -cp %CLASSPATH% %MAIN_CLASS% -opt -1 "%BOOTSTRAP_JS%" "%ROOT_DIR%" %*
-%JAVA% -cp %CLASSPATH% %MAIN_CLASS% -opt -1 "%BOOTSTRAP_JS%" "%ROOT_DIR%" %*
+echo %JAVA% -cp %CLASSPATH% %MAIN_CLASS% -opt -1 "%BOOTSTRAP_JS%" "%ROOT_DIR%" "%*"
+%JAVA% -cp %CLASSPATH% %MAIN_CLASS% -opt -1 "%BOOTSTRAP_JS%" "%ROOT_DIR%" "%*"
