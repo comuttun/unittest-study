@@ -36,6 +36,9 @@ fi
 
 export JAVA_HOME=${JAVA_HOME:-${MY_JAVA_HOME}}
 
+# cleanup previous test runs
+rm -f TEST-*.xml
+
 if [ ${CYGWIN} -eq 1 ]; then
     CLASSPATH=$(cygpath -w "${EXTLIB_DIR}/js.jar")
     ROOTDIR_FULLPATH_WIN=$(cygpath -w "${ROOTDIR_FULLPATH}")
@@ -44,7 +47,6 @@ if [ ${CYGWIN} -eq 1 ]; then
     "${JAVA}" -cp "${CLASSPATH}" ${MAIN_CLASS} -opt -1 "${BOOTSTRAP_JS}" "${ROOTDIR_FULLPATH_WIN}" "$@"
 else
     CLASSPATH=${EXTLIB_DIR}/js.jar
-    TARGET=$1
     JAVA=${JAVA_HOME}/bin/java
     ${JAVA} -cp "${CLASSPATH}" ${MAIN_CLASS} -opt -1 "${LIB_DIR}/envjs.bootstrap.js" "${ROOTDIR_FULLPATH}" "$@"
 fi
