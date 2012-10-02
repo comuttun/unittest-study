@@ -63,6 +63,8 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
     
 ## 参加するための準備2
 
-途中
+* Jenkins の最低限の用意
+   * [Jenkins](https://github.com/comutt/unittest-study/wiki/Jenkins)
+
 
 
