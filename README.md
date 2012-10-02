@@ -57,9 +57,9 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
 
 ## 参加するための準備
 
-前回使用した知識は、思い出せる程度に確認しておいてください。
-    * [[JavaScript]]
-    * [[Jasmine]]
+* 前回使用した知識は、思い出せる程度に確認しておいてください。
+    * [JavaScript](https://github.com/comutt/unittest-study/wiki/JavaScript)
+    * [Jasmine](https://github.com/comutt/unittest-study/wiki/Jasmine)
     
 ## 参加するための準備2
 
