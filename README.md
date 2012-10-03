@@ -1,30 +1,36 @@
 単体テスト勉強会
 =================
 
-2012/09/13（木）開催の単体テスト勉強会用リポジトリです。
+単体テスト勉強会用リポジトリです。
 
-開催概要
----------
+## 開催概要
 
-* 時間: 2012/09/13 （木） 19:00 - 21:00
-* 場所: 函館市 中央図書館 2F 中研修室 [地図](http://goo.gl/maps/HcGZq)
+* ~~時間: 2012/09/13 （木） 19:00 - 21:00 （第一回）~~
+* 時間: 2012/10/04 （木） 19:00 - 21:00 （第二回）
+* 場所: 函館市 中央図書館 2F 大研修室 [地図](http://goo.gl/maps/HcGZq)
+    * 前回の中研修室から場所が変わっていますのでご注意ください。
 
-開催趣旨
----------
+## 内容
 
-* 単体テストとはなんぞ？
-* 自動テストってなんぞ？
-* 単体テストを実際に書いてみよう！（ハンズオン）
-    * JavaScript を使って、実際に単体テストをみんなで書いてみる
-* 自動テストを動かしてみる（not ハンズオン）
+* **おそらく時間通りには進められない気がするので、合計した時間（90分）よりは長くなると思います。**
+
+* 前回の簡単なおさらい（10分程度）
+* 前回より詳しく、自動テスト（CI）について（15分程度）
+* 実際に自動テスト環境を Jenkins を使って構築してみよう（ハンズオン）（15分程度）
+* さらに詳しく単体テストについて（15分程度）
+    * モッキング
+    * カバレッジ
+* モッキングを使ったテストを実践してみよう（ハンズオン）（15分程度）
+* カバレッジの実演（10分程度）
+* まとめ（10分程度）
+
 
 **注意**
 
 JavaScript を使用しますが、言語のひとつとして使用するだけです。
 そのため、 JavaScript の単体テストの奥深くを紹介するわけではありません。
 
-ディレクトリ構成
-----------------
+## ディレクトリ構成
 
     ├── jasmine-1.2.0                        --- jasmine-standalone-1.2.0.zip を展開したディレクトリです。
     │   ├── lib                                  --- Jasmine のライブラリ群です
@@ -34,10 +40,13 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
     │   │       ├── jasmine-html.js
     │   │       └── MIT.LICENSE
     │   ├── spec                                 --- テストコードです。 spec というのに見慣れない方も多いと思いますが、 ruby の rspec の系統です。
+    │   │   ├── GreeterSpec.js
     │   │   ├── PlayerSpec.js
     │   │   └── SpecHelper.js
     │   ├── SpecRunner.html                      --- テストを実行するための html です。ブラウザで開くと、テストが実行されます。
+    │   ├── GreetingSpecRunner.html              --- こちらは Greeter.js 用のテスト実行 html です。
     │   └── src                                  --- テスト対象のソースコードです。
+    │       ├── Greeter.js
     │       ├── Player.js
     │       └── Song.js
     ├── README.md
@@ -46,87 +55,16 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
         ├── jasmine-reporters-0.2.1.zip           --- Jasmine のテスト結果を、 JUnit XML 形式などで出力するためのライブラリです。これも Jenkins で自動テストするときに使います。
         └── jasmine-standalone-1.2.0.zip          --- Jasmine 本体です。ハンズオンでは、これだけを使います。
 
-参加するための準備
--------------------
+## 参加するための準備
 
-自動テストもハンズオンしようと思ったのですが、
-環境の差異を考慮して周到に準備するのが難しいので、あきらめます。
-
-なので、各自のブラウザで Jasmine のサンプルテスト (SpecRunner.html) が正常に動くことを確認してください。
-
-### 手順
-
-1. このリポジトリの [zip 版](https://github.com/comutt/unittest-study/zipball/v0.0.2) をダウンロード 
-1. 展開
-1. jasmine-1.2.0/SpecRunner.html をブラウザで開きます。
-1. 以下のように、テストが正常に実行されればOKです。
-
-   ![Jasmineのテスト結果](https://raw.github.com/comutt/unittest-study/master/images/jasmine-result.png)
-
-参加するための準備2
----------------------
-
-趣旨に基づき、無難しいことはしませんが、
-最低限の JavaScript の知識は事前に勉強しておいていただけると幸いです。
-（一般的なオブジェクト志向言語と比較すると、少し変態的です）
-
-### その1
-
-JavaScript でのクラス（のようなもの）の定義は
-
-```JavaScript
-function HogeClass() {}
-```
+* 前回使用した知識は、思い出せる程度に確認しておいてください。
+    * [JavaScript](https://github.com/comutt/unittest-study/wiki/JavaScript)
+    * [Jasmine](https://github.com/comutt/unittest-study/wiki/Jasmine)
     
-その実体化は
+## 参加するための準備2
 
-```JavaScript
-var hoge = new HogeClass();
-```
+* Jenkins の最低限の用意
+   * [Jenkins](https://github.com/comutt/unittest-study/wiki/Jenkins)
 
-以降、便宜上、  `function HogeClass() {}` のように定義した関数オブジェクトをクラスと表記します。
-    
-### その2
 
-JavaScript は匿名関数をすごく、すごく、多用します。
-（Jasmine のテストケースでも一杯使います）
 
-```JavaScript
-function doHoge(func) {
-    return func();
-}
-
-var result = doHoge(function() {
-    return "hogehoge";
-});
-```
-
-上記のようなコードがあった場合、 result は "hogehoge" になります。
-匿名関数がよくわからない方は、詳しく理解しなくても今回の勉強会では大丈夫です。
-面食らわないようにだけしてください。（本当によく使うので）
-    
-### その3
-
-クラスへのメソッド追加は
-
-```JavaScript
-function HogeClass() {}
-HogeClass.prototype.hello = function() {
-     return "hello";
-}; // 最後のセミコロン大事
-```
-
-のように行います。
-上記のように定義した場合、
-
-```JavaScript
-var hoge = new HogeClass();
-alert(hoge.hello());
-```
-
-は "hello" がダイアログに表示されます。
-
-.prototype というのを使うのが、 JavaScript が変態たる所以です。
-今回の勉強会では、そういうもんだと思っていただければ大丈夫です。
-これも使うので、面食らわないようにだけしてください。
-    
