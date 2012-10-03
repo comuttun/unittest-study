@@ -1,0 +1,15 @@
+/* vim: ts=4 sts=4 sw=4 et ai si :
+ */
+
+#fruitBasket li {
+    list-style: none;
+}
+
+#fruitBasket li.name {
+    list-style: none;
+    float: left;
+}
+
+#fruitBasket li.count:after {
+    clear: left; 
+}
