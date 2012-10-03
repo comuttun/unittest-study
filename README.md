@@ -61,4 +61,8 @@ JavaScript を使用しますが、言語のひとつとして使用するだけ
     * [JavaScript](https://github.com/comutt/unittest-study/wiki/JavaScript)
     * [Jasmine](https://github.com/comutt/unittest-study/wiki/Jasmine)
 
+* Subversion を使うので、クライアント（svnコマンドでも、 TortoiseSVN などのGUIクライアントでもなんでもいいです）を（入っていない方は）インストールしてきてください
+* 前回、無線LANがまともに使えませんでしたが、今度はしっかりしたアクセスポイントをもっていくので大丈夫だと思います。
+* が、インターネットは期待しないでください。（アットウェア所有の e-mobile 回線のため）
+
 
