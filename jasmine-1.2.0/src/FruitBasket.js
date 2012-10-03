@@ -13,8 +13,14 @@ FruitBasket.prototype.addFruit = function(fruit) {
 // バスケットに果物を追加（画面から用）
 FruitBasket.prototype.addFruitFromUI = function() {
     var fruitName = $('#fruitList option:selected').val();
-    var count = $('#countToAdd');
-    this._fruits.push(fruits[fruitName](int(count)));
+    var count = $('#countToAdd').val();
+    if (!count) {
+        alert('個数を入力してください');
+        return;
+    }
+    this._fruits.push(new fruit[fruitName](parseInt(count)));
+
+    this.displayAllFruitsInfo();
 };
 
 // バスケットに入っている果物情報を全て取得する
@@ -32,6 +38,7 @@ FruitBasket.prototype.getAllFruitsInfo = function() {
 FruitBasket.prototype.displayAllFruitsInfo = function() {
     var list = $('ol#fruitBasket');
 
+    list.empty();
     var allFruitsInfo = this.getAllFruitsInfo();
     for (var i = 0; i < allFruitsInfo.length; i++) {
         var info = allFruitsInfo[i];
@@ -43,11 +50,10 @@ FruitBasket.prototype.displayAllFruitsInfo = function() {
 
 // リスト初期化
 FruitBasket.prototype.initializeList = function() {
+    var list = $('#fruitList');
     for (var key in fruit) {
-        var list = $('#fruitList');
-        var item = $('<opiton></option>');
-        item.val(key);
-        item.text(key);
+        var item = $('<option></option>');
+        item.val(key).text(new fruit[key](0).getName());
         list.append(item);
     }
 }

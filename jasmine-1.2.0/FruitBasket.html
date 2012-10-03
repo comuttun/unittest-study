@@ -24,9 +24,14 @@
 
     <h1>フルーツバスケット</h1>
 
-    <form action="javascript:fruitBasket.addFromUI();">
-      <select id="fruitList">
-      </select>
+    <form action="javascript:fruitBasket.addFruitFromUI();">
+      <label>
+        果物<select id="fruitList" name="fruit"></select>
+      </label>
+      <label>
+        個数
+        <input type="text" id="countToAdd" name="count" maxlength="3" size="5"/>
+      </label>
       <button type="submit" class="btn">バスケットに追加</button>
     </form>
 

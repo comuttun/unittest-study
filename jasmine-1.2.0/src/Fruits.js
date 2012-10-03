@@ -4,11 +4,11 @@
 var fruit = {};
 
 // 果物クラスを名前空間内に登録
-fruit.registerClass = function(className) {
+function registerFruitClass(className) {
     $.getScript('src/fruits/' + className + '.js', function(data, textStatus, jqxhr) {
         fruit[className] = eval(className);
     });
 }
 
-fruit.registerClass('Apple');
+registerFruitClass('Apple');
 
